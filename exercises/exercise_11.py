@@ -6,7 +6,7 @@ add = 0
 
 
 dollars_needed = int(input("How much do you need to give: "))#
-dollar_types = [500, 100, 10, 5, 2, 1,"placeholder"]
+dollar_types = [500, 100, 10, 5, 1]
 while satisfied == False:
     for i in dollar_types:
         add = dollars_needed // i
@@ -15,21 +15,51 @@ while satisfied == False:
         num += dollars_needed
         if dollars_needed == 0:
             satisfied = True
-            print(money)
             break
-five_hundreds = money[0]
-hundreds = money[1]
-tens = money[2]
-fives = money[3]
-twos = money[4]
-print("The denominations breakdown is as follows:")
-print("Number of Five Hundreds:", five_hundreds)
-print("Number of Hundreds:", hundreds)
-print("Number of Tens:", tens)
-print("Number of Fives:", fives)
-print("Number of Twos:", twos)
-if len(money) > 5:
-    ones = money[5]
+
+if len(money) > 0:
+    five_hundreds = money[0]
+    # print("Number of Five Hundreds:", five_hundreds)
+    print(f"{five_hundreds}(500)")
+else:
+    five_hundreds = 0 
+    print("Number of Five Hundreds:", five_hundreds)
+    print(f"{five_hundreds}(500)")
+if len(money) > 1:
+    hundreds = money[1]
+    # print("Number of Hundreds:", hundreds)
+    print(f"{five_hundreds}(500){hundreds}(100)")
+else:
+    hundreds = 0 
+    print("Number of Hundreds:", hundreds)
+
+if len(money) > 2:
+    tens = money[2]
+    # print("Number of Tens:", tens)
+    print(f"{five_hundreds}(500){hundreds}(100){tens}(10)")
+else:
+    tens = 0 
+    print("Number of Tens:", tens)
+
+if len(money) > 3:
+    fives = money[3]
+    print("Number of Fives:", fives)
+    print(f"{five_hundreds}(500){hundreds}(100){tens}(10){fives}(5)")
+else:
+    fives = 0 
+    print("Number of Fives:", fives)
+
+# if len(money) > 4:
+#     twos = money[4]
+#     print("Number of Twos:", twos)
+# else:
+#     twos = 0 
+#     print("Number of Twos:", twos)
+
+if len(money) > 4:
+    ones = money[4]
+    print("Number of Ones:", ones)
+    print(f"{five_hundreds}(500){hundreds}(100){tens}(10){fives}(5){ones}(1)")
 else:
     ones = 0 
     print("Number of Ones:", ones)
