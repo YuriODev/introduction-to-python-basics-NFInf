@@ -1,4 +1,4 @@
-# Exercise 11
+ # Exercise 11
 satisfied = False
 num = 0
 money = []
